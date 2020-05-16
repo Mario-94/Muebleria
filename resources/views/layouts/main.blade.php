@@ -56,6 +56,7 @@
 </form>
 <body>
   @yield('contenido')
+  @include('layouts.main_content_store')
   @include('layouts.footer')
   <script src="{{asset('assets/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
