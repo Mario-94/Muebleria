@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\StoreControllers;
+namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
-use App\Models\{Product, Category, ProductDetail,Image};
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 
-class StoreController extends Controller
+class ProductDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,28 +14,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('store.index', compact('categories'));
-    }
-
-    public function showProducts($texto)
-    {
-        $categories = Category::all();
-        $products = Product::join("images","images.product_id","=","products.id")->where('images.priority','=',"Principal")->get();
-    
-        return view('store.show_products', compact('categories','products', 'texto' ));
-    }
-
-    public function productDetail($id)
-    {
-        $categories = Category::all();
-        
-        $product = Product::findOrFail($id);
-        $product_detail = Product::find($id)->ProductDetail;
-        $products_image = Product::find($id)->Image;
-        return view('store.product_detail', compact('categories', 'product', 'product_detail', 'products_image'));
-
-
+        //
     }
 
     /**
@@ -62,10 +41,10 @@ class StoreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\ProductDetail  $productDetail
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ProductDetail $productDetail)
     {
         //
     }
@@ -73,10 +52,10 @@ class StoreController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\ProductDetail  $productDetail
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProductDetail $productDetail)
     {
         //
     }
@@ -85,10 +64,10 @@ class StoreController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\ProductDetail  $productDetail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ProductDetail $productDetail)
     {
         //
     }
@@ -96,10 +75,10 @@ class StoreController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\ProductDetail  $productDetail
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ProductDetail $productDetail)
     {
         //
     }
