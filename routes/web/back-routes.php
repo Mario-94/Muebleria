@@ -34,7 +34,5 @@ Route::get('/admin/products/create', 'AdminControllers\ProductController@create'
 Route::post('/admin/products/save', 'AdminControllers\ProductController@store')->name('admin.products_store')->middleware('IsAdmin');
 
 Route::delete('/admin/products/{id}','AdminControllers\ProductController@destroy')->name('admin.products_delete')->middleware('IsAdmin');
-
 Route::get('/admin/products/{product}/edit', 'AdminControllers\ProductController@edit')->name('admin.products_edit')->middleware('IsAdmin');
-
 Route::put('/admin/products/{product}/update', 'AdminControllers\ProductController@update')->name('admin.products_update')->middleware('IsAdmin');

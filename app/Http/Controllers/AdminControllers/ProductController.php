@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
+use App\Models\{Product, Category, ProductDetail,Image};
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -25,7 +25,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::all();
+        return view('admin.products.create', compact('categories'));
     }
 
     /**
@@ -43,6 +44,37 @@ class ProductController extends Controller
         $newProduct-> stock = $request -> input('stock');
         $newProduct-> categories_id = $request -> input('category');
         $newProduct->save();
+        $producto_id = $newProduct -> id;
+       
+        $product_detail = new ProductDetail;
+        $product_detail-> product_id  = $producto_id;
+        $product_detail-> number_of_pieces = $request -> input('number_of_pieces');
+        $product_detail-> measurements = $request -> input('measurements');
+        $product_detail-> weight = $request -> input('weight');
+        $product_detail-> material = $request -> input('material');
+        $product_detail-> colors = $request -> input('colors');
+        $product_detail-> desing = $request -> input('desing');
+        $product_detail-> description = $request -> input('description');
+        $product_detail->save();
+
+        $product_image = new Image;
+        $product_image-> url = $request -> input('url1');
+        $product_image-> product_id  = $producto_id;
+        $product_image-> priority = "Principal";
+        $product_image->save();
+
+        $product_image2 = new Image;
+        $product_image2-> url = $request -> input('url2');
+        $product_image2-> product_id  = $producto_id;
+        $product_image2-> priority = "Secundario";
+        $product_image2->save();
+
+        $product_image3 = new Image;
+        $product_image3-> url = $request -> input('url3');
+        $product_image3-> product_id  = $producto_id;
+        $product_image3-> priority = "Secundario";
+        $product_image3->save();
+
         return redirect()->route('admin.products_index')->with('info','Producto creado exitosamente');
     }
 
