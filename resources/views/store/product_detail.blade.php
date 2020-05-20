@@ -4,7 +4,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card-header">
-					
+					{{$texto ?? '' }}
+					{{-- revisar como pasar las variables por default por que originalmente el metodo de jony esta de esta manera  {{$texto}} pero marca error--}}
 				</div>
 				<div class="card-body">
 					<div class="media">

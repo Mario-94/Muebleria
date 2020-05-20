@@ -9,10 +9,10 @@
                         <img src="https://i.pinimg.com/originals/b4/6c/3b/b46c3b0b96606d27a457b35c12941321.jpg" class="img-fluid" alt="Responsive image">
                       </div>
                       <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://i.pinimg.com/originals/b4/6c/3b/b46c3b0b96606d27a457b35c12941321.jpg" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="https://i.pinimg.com/originals/b4/6c/3b/b46c3b0b96606d27a457b35c12941321.jpg" class="d-block w-100" alt="...">
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -26,5 +26,8 @@
                   </div>
 			</div>
 		</div>
-	</div>
+  </div>
+  <div class = " footer bg-secondary green-line-absolute">    
+  </div>
+  @include('store.main_content_store')
 @endsection

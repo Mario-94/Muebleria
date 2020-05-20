@@ -1,24 +1,25 @@
-<div class = " footer bg-secondary green-line-absolute">
-   <div class = "  bg-secondary text-white container ">
-      <div class = "row  mt-2 mb-2 pb-2 green-line-absolute">
-         <div class = "col-md-8"> 
+<div class=" footer bg-secondary green-line-absolute">
+   <div class="  bg-secondary text-white container ">
+      <div class="row  mt-2 mb-2 pb-2 green-line-absolute">
+         <div class="col-md-8">
             <span class=" text title-general">
                Siguenos en:
             </span>
          </div>
-         <div class = "col-md-4 mt-3 mb-2 "> 
+         <div class="col-md-4 mt-3 mb-2 ">
             <i class="green-circle fab fa-facebook-f"></i>
             <i class="green-circle fab fa-twitter ml-5"></i>
             <i class="fab fa-instagram ml-5 green-circle"></i>
          </div>
       </div>
-      
+
       <div class="row mt-2 pt-3 pb-2">
-         <div class = "col-md-4 text ">
+         <div class="col-md-4 text ">
             <span class="text-center green-line mt-2">VIRDY</span>
-            <p class="mt-3 pr-3">here you can and columns to otganize your footer content.ipsum dorlor sit amet, consectetur adipisicing elit.</p>
+            <p class="mt-3 pr-3">here you can and columns to otganize your footer content.ipsum dorlor sit amet,
+               consectetur adipisicing elit.</p>
          </div>
-         <div class = "col-md-4 text ">
+         <div class="col-md-4 text ">
             <span class="text-center green-line mt-2">PRODUCTS</span>
             <div class="row mt-3 mb-3">
                <div class="col-md-6">
@@ -35,7 +36,7 @@
                </div>
             </div>
          </div>
-         <div class = "col-md-4 text ">
+         <div class="col-md-4 text ">
             <span class="text-center green-line mt-2">CONTACTO</span>
             <li class="list-group mt-3">
                <span>

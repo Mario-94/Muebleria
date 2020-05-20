@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\StoreControllers;
 use App\Http\Controllers\Controller;
 use App\Models\{Product, Category, ProductDetail,Image};
@@ -36,6 +35,27 @@ class StoreController extends Controller
         return view('store.product_detail', compact('categories', 'product', 'product_detail', 'products_image'));
 
 
+    }
+    /**
+     * Lo mas visto agregaremos un campo a  la tabla productos para llegan un contador para checar las veces que se a cliqueado sobre ese objeto
+     */
+    public function mostView()
+    {
+        $categories = Category::all();
+        $product= Product::all();
+        
+        return view ('store.most_views_products',compact('categories', 'product'));
+    }
+    /**
+     * Novedades en esta parte haremos una seleccion sobre los articulos registrados mas resientemente en la base de datos
+     */
+    public function newsProduct()
+    {
+        $categories = Category::all();
+        $newProducts=Product::whereMonth('created_at','>=','4')->get();
+        
+        $products=Product::join('images as Im', 'products.id','=','Im.product_id')->join('product_details as P', 'products.id','=','P.product_id')->get();
+        return view('store.news_products',compact('newProducts','categories','products'));
     }
 
     /**

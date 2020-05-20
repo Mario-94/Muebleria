@@ -22,7 +22,7 @@
         <a class="nav-link" href=" {{ route('tienda.index') }}">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href=" {{ route('tienda.show_products',$texto='Todos Los Productos')}}">Productos</a>
+        <a class="nav-link" href=" {{ route('tienda.show_products',$texto='Todos los productos')}}">Productos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href=" {{ route('tienda.show_products',$texto='Ofertas')}}">Ofertas</a>
@@ -56,7 +56,7 @@
 </form>
 <body>
   @yield('contenido')
-  @include('layouts.main_content_store')
+  
   @include('layouts.footer')
   <script src="{{asset('assets/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
